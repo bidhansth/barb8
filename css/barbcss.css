@@ -1,0 +1,164 @@
+/* Google Font CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+.navbar-brand{
+  margin-left:60px;
+  font-weight:500;
+  font-size: 36px!important;
+  padding:0;
+  font-family:Ubuntu;
+}
+
+.barbalert{
+  width: 30%;
+  margin-left: -15%;
+  text-align: center;
+  top: 10%;
+  position: fixed;
+  left: 50%;
+}
+
+.con-reg{
+  display: none;
+}
+
+.con-log{
+  display: block;
+}
+
+.nav-item{
+  padding: 6px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+.b-item{
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Underline From Center */
+.hvr-underline {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #ff5200;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline:hover:before, .hvr-underline:focus:before, .hvr-underline:active:before {
+  left: 0;
+  right: 0;
+}
+/* Formatting search box */
+.search-box{
+  position: relative;
+}
+.result{
+  width: 100%;
+}
+/* Formatting result items */
+.result p{
+  margin: 0;
+  padding: 7px 20px;
+  border: 1px solid #CCCCCC;
+  border-top: none;
+  cursor: pointer;
+}
+.result p:hover{
+  background: #f2f2f2;
+}
+
+/* Full-width input fields */
+input[type=text],input[type=password],input[type=email],input[type=date], select, textarea,input[type=time]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.barbbutton {
+  background-color:#047a94;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.barbbutton:hover {
+  opacity: 0.8;
+}
+
+.lgbutton{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #047a94;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #047a94;
+}
