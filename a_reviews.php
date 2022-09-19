@@ -21,16 +21,16 @@
       text-align: center;
     }
     table#table_id.dataTable tbody tr.Highlight > .sorting_1 {
-      background-color: #f9494980 !important;
+      background-color: #FFBFBF !important;
     }
     table#table_id.dataTable tbody tr.Highlight {
-        background-color: #f9494980 !important;
+        background-color: #FFBFBF !important;
     }
     table#table_id.dataTable tbody tr.HighlightG > .sorting_1 {
-      background-color: #39ff39b3 !important;
+      background-color: #B1F3B1 !important;
     }
     table#table_id.dataTable tbody tr.HighlightG {
-        background-color: #39ff39b3 !important;
+        background-color: #B1F3B1 !important;
     }
   </style>
 </head>
@@ -46,10 +46,10 @@
           $result = $db->query($sql);
 
           if ($result->num_rows > 0) {
-              echo "<thead><tr><th>Review ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Review Content</th><th>Review Date</th><th style=\"display:none\">Score</th><th>Actions</th></tr></thead><tbody>";
+              echo "<thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Review Content</th><th>Review Date</th><th style=\"display:none\">Score</th><th>Actions</th><th></th></tr></thead><tbody>";
               // output data of each row
               while($row = $result->fetch_assoc()) {
-                  echo "<tr><td>" . $row["rid"]. "</td><td>" . $row["mname"]. "</td><td>" . $row["email"]. "</td><td>" . $row["phone"]. "</td><td>" . $row["rcontent"] . "</td><td>" . $row["rdate"] . "</td><td style=\"display:none\">" . $row["rscore"] . "</td><td><a href=\"a_reviews.php?deletereview=" . $row['rid'] . "\">Delete</a>&nbsp;<a href=\"mailto:". $row["email"] ."\">Send Email</a></td></tr>";
+                  echo "<tr><td>" . $row["rid"]. "</td><td>" . $row["mname"]. "</td><td>" . $row["email"]. "</td><td>" . $row["phone"]. "</td><td>" . $row["rcontent"] . "</td><td>" . $row["rdate"] . "</td><td style=\"display:none\">" . $row["score"] . "</td><td><a href=\"a_reviews.php?deletereview=" . $row['rid'] . "\">Delete</a></td><td><a href=\"mailto:". $row["email"] ."\">Send Email</a></td></tr>";
               }
           } else {
               echo "0 results";

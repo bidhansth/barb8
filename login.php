@@ -79,7 +79,7 @@
       <div class="col-sm-3">
         <h5>Not a member yet?</h5>
         <h3>Register</h3><br>
-        <form method="post" id="form" class="form">
+        <form method="post" id="form" class="form" onsubmit="return checkInputs();">
           <div class="form-control">
             <label for="mname"><b>Name</b></label>
             <input type="text" placeholder="Enter Name" name="mname" maxlength="50" id="mname">
@@ -131,11 +131,6 @@
     const password = document.getElementById('password');
     const password2 = document.getElementById('password2');
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      checkInputs();
-    });
-
     function checkInputs() {
       // trim to remove the whitespaces
       const usernameValue = username.value.trim();
@@ -146,41 +141,54 @@
       
       if(usernameValue === '') {
         setErrorFor(username, 'Name cannot be blank');
+        return false;
       } else if (!isUsername(usernameValue)) {
         setErrorFor(username, 'Not a valid name');
+        return false;
       } else {
         setSuccessFor(username);
       }
 
       if(phoneValue === '') {
         setErrorFor(phone, 'Phone cannot be blank');
+        return false;
       } else if (!isPhone(phoneValue)) {
         setErrorFor(phone, 'Not a valid phone');
+        return false;
       } else {
         setSuccessFor(phone);
       }
       
       if(emailValue === '') {
         setErrorFor(email, 'Email cannot be blank');
+        return false;
       } else if (!isEmail(emailValue)) {
         setErrorFor(email, 'Not a valid email');
+        return false;
       } else {
         setSuccessFor(email);
       }
       
       if(passwordValue === '') {
         setErrorFor(password, 'Password cannot be blank');
+        return false;
+      } else if (!isPassword(passwordValue)) {
+        setErrorFor(password, '6-20 chars,one number,one uppercase,one lowercase');
+        return false;
       } else {
         setSuccessFor(password);
       }
 
       if(password2Value === '') {
         setErrorFor(password2, 'Confirm Password cannot be blank');
+        return false;
       } else if(passwordValue !== password2Value) {
         setErrorFor(password2, 'Passwords does not match');
+        return false;
       } else{
         setSuccessFor(password2);
       }
+      return true;
     }
     function setErrorFor(input, message) {
       const formControl = input.parentElement;
@@ -200,6 +208,9 @@
     }
     function isPhone(phone) {
       return /^[0-9]{10}$/.test(phone);
+    }
+    function isPassword(password) { 
+      return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/.test(password);
     }
   </script>
 </body>
